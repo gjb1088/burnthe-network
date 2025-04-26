@@ -79,7 +79,7 @@
             top: 5%;
             left: 50%;
             transform: translateX(-50%);
-            max-width: 38%;
+            max-width: 38%;   /* Desktop size */
             opacity: 0;
             animation: flickerInLogo 2s ease forwards;
         }
@@ -130,8 +130,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .burnit-logo {
-                top: 3%;
-                max-width: 50%;
+                max-width: 45%;
+                top: 4%;
             }
             .contact-button {
                 font-size: 0.9em;
@@ -147,40 +147,15 @@
 
         @media (max-width: 480px) {
             .burnit-logo {
-                top: 2%;
-                max-width: 60%;
+                max-width: 50%;
+                top: 3%;
             }
             .contact-button {
                 font-size: 0.8em;
                 padding: 6px 12px;
             }
         }
-        /* Default for Desktop */
-.burnit-logo {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 38%;   /* Your custom size */
-    opacity: 0;
-    animation: flickerInLogo 2s ease forwards;
-}
 
-/* Tablet View */
-@media (max-width: 768px) {
-    .burnit-logo {
-        max-width: 50%;
-        top: 4%;
-    }
-}
-
-/* Mobile View */
-@media (max-width: 480px) {
-    .burnit-logo {
-        max-width: 60%;
-        top: 3%;
-    }
-}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
