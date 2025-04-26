@@ -1,161 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Burn.IT - Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #330033, #001f33);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-      color: #f0f0f0;
-      font-family: 'Share Tech Mono', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burn.IT - Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #330033, #001f33);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            color: #f0f0f0;
+            font-family: 'Share Tech Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2em;
-      color: #ff00cc;
-      text-shadow: 0 0 5px #ff00cc, 0 0 15px #ff00cc;
-      animation: flicker 2.5s infinite;
-      margin: 20px;
-    }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2em;
+            color: #ff00cc;
+            text-shadow: 0 0 5px #ff00cc, 0 0 15px #ff00cc, 0 0 30px #ff00cc;
+            animation: flicker 2.5s infinite;
+            margin: 30px 20px 10px 20px;
+        }
 
-    p {
-      font-size: 1.1em;
-      color: #cccccc;
-      text-shadow: 0 0 5px #00ffff50;
-      max-width: 800px;
-      margin: 10px 20px;
-    }
+        p {
+            font-size: 1.1em;
+            color: #cccccc;
+            text-shadow: 0 0 5px #00ffff50;
+            max-width: 800px;
+            margin: 10px 20px;
+        }
 
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-      20%, 24%, 55% { opacity: 0.6; }
-    }
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.6; }
+        }
 
-    .image-wrapper {
-      position: relative;
-      display: inline-block;
-      margin-top: 20px;
-      animation: none;
-    }
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
 
-    .coming-soon-img {
-      max-width: 80%;
-      border-radius: 8px;
-      opacity: 0;
-      animation: flickerInImage 6s ease forwards;
-    }
+        /* Coming Soon Image */
+        .coming-soon-img {
+            max-width: 80%;
+            border-radius: 8px;
+            opacity: 0;
+            animation: flickerInImage 7s ease forwards;
+            animation-delay: 2s;
+        }
 
-    @keyframes flickerInImage {
-      0%   { opacity: 0; }
-      40%  { opacity: 0.2; }
-      60%  { opacity: 0.7; }
-      80%  { opacity: 1; }
-      100% { opacity: 1; }
-    }
+        @keyframes flickerInImage {
+            0%   { opacity: 0; }
+            50%  { opacity: 0.2; }
+            60%  { opacity: 0.7; }
+            66%  { opacity: 0.8; }
+            75%  { opacity: 1; }
+            100% { opacity: 1; }
+        }
 
+        /* Burn.IT Logo */
+        .burnit-logo {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 38%;
+            opacity: 0;
+            animation: flickerInLogo 2s ease forwards;
+        }
+
+        @keyframes flickerInLogo {
+            0%   { opacity: 0; }
+            30%  { opacity: 0.6; }
+            50%  { opacity: 0.3; }
+            70%  { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        /* Inquiry Button */
+        .contact-button {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1em;
+            text-shadow: 0 0 5px #00ffff;
+            box-shadow: 0 0 15px #00ffff50;
+            border-radius: 5px;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: flickerInButton 1.5s ease forwards;
+            animation-delay: 9s;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            box-shadow: 0 0 25px #00ffff;
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        @keyframes flickerInButton {
+            0%   { opacity: 0; }
+            40%  { opacity: 0.5; }
+            60%  { opacity: 0.2; }
+            80%  { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .burnit-logo {
+                top: 3%;
+                max-width: 50%;
+            }
+            .contact-button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .burnit-logo {
+                top: 2%;
+                max-width: 60%;
+            }
+            .contact-button {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+        /* Default for Desktop */
+.burnit-logo {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 38%;   /* Your custom size */
+    opacity: 0;
+    animation: flickerInLogo 2s ease forwards;
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
     .burnit-logo {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 35%;
-      opacity: 0;
-      animation: flickerInLogo 2s ease forwards;
-      animation-delay: 6s;
+        max-width: 50%;
+        top: 4%;
     }
+}
 
-    @keyframes flickerInLogo {
-      0%   { opacity: 0; }
-      30%  { opacity: 0.5; }
-      60%  { opacity: 0.8; }
-      100% { opacity: 1; }
+/* Mobile View */
+@media (max-width: 480px) {
+    .burnit-logo {
+        max-width: 60%;
+        top: 3%;
     }
-
-    .contact-button {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      color: #00ffff;
-      border: 2px solid #00ffff;
-      text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1em;
-      text-shadow: 0 0 5px #00ffff;
-      box-shadow: 0 0 15px #00ffff50;
-      border-radius: 5px;
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-      transition: all 0.3s ease;
-    }
-
-    .contact-button:hover {
-      box-shadow: 0 0 25px #00ffff;
-      background-color: rgba(0, 255, 255, 0.1);
-    }
-
-    /* Mobile-specific animations */
-    @media (max-width: 768px) {
-      .content-wrapper {
-        animation: fadeOutContent 1s ease forwards;
-        animation-delay: 9s;
-      }
-
-      .contact-button {
-        animation: flickerInButton 1.5s ease forwards;
-        animation-delay: 11s;
-      }
-    }
-
-    @keyframes fadeOutContent {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    @keyframes flickerInButton {
-      0%   { opacity: 0; }
-      50%  { opacity: 0.5; }
-      80%  { opacity: 0.8; }
-      100% { opacity: 1; }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="content-wrapper">
     <h1>"If you want to take the island, burn the boats."</h1>
     <p>When retreat is no longer an option, success becomes the only path forward.</p>
 
     <div class="image-wrapper">
-      <img src="./assets/coming-soon.png" alt="Coming Soon" class="coming-soon-img">
-      <img src="./assets/burnit-logo.png" alt="Burn.IT Logo" class="burnit-logo">
+        <img src="./assets/coming-soon.png" alt="Coming Soon" class="coming-soon-img">
+        <img src="./assets/burnit-logo.png" alt="Burn.IT Logo" class="burnit-logo">
+
+        <a href="mailto:questions@burnthe.network?subject=Questions%20I%20have%20about%20Burn.IT" class="contact-button">
+            For all inquiries: Click Here
+        </a>
     </div>
 
     <p><strong>No way back. Only forward. Burn.IT.</strong></p>
-  </div>
-
-  <a href="mailto:questions@burnthe.network?subject=Questions%20I%20have%20about%20Burn.IT" class="contact-button">
-    For all inquiries: Click Here
-  </a>
 
 </body>
 </html>
