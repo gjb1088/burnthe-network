@@ -11,7 +11,9 @@
   />
 
   <style>
-    /* Base page styles */
+    /* --------------------
+       Base page styles
+    -------------------- */
     html, body {
       margin: 0;
       padding: 0;
@@ -57,7 +59,9 @@
       margin: 10px 20px;
     }
 
-    /* Image + overlays */
+    /* --------------------
+       Image + overlays
+    -------------------- */
     .image-wrapper {
       position: relative;
       width: 80%;
@@ -73,35 +77,34 @@
         0   0  50px #ff00ff40;
       opacity: 0;
       animation: flickerInImage 7s ease forwards;
-      /* STARTS after logo animation finishes (2s) */
       animation-delay: 2s;
     }
     @keyframes flickerInImage {
-      0%   { opacity: 0;   }
+      0%   { opacity: 0; }
       50%  { opacity: 0.2; }
       60%  { opacity: 0.7; }
       66%  { opacity: 0.8; }
-      75%  { opacity: 1;   }
-      100% { opacity: 1;   }
+      75%  { opacity: 1; }
+      100% { opacity: 1; }
     }
 
+    /* Desktop logo size increased to 50% */
     .burnit-logo {
       position: absolute;
       top: 5%;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 38%;
+      max-width: 50%;      /* ← bumped up from 38% */
       opacity: 0;
       animation: flickerInLogo 2s ease forwards;
-      /* STARTS immediately */
       animation-delay: 0s;
     }
     @keyframes flickerInLogo {
-      0%   { opacity: 0;   }
+      0%   { opacity: 0; }
       30%  { opacity: 0.6; }
       50%  { opacity: 0.3; }
       70%  { opacity: 0.8; }
-      100% { opacity: 1;   }
+      100% { opacity: 1; }
     }
 
     .contact-button {
@@ -121,7 +124,6 @@
       background-color: rgba(0, 0, 0, 0.4);
       opacity: 0;
       animation: flickerInButton 1.5s ease forwards;
-      /* STARTS after logo (2s) + image (7s) = 9s */
       animation-delay: 9s;
       transition: all 0.3s ease;
     }
@@ -130,14 +132,16 @@
       box-shadow: 0 0 25px #00ffff;
     }
     @keyframes flickerInButton {
-      0%   { opacity: 0;   }
+      0%   { opacity: 0; }
       40%  { opacity: 0.5; }
       60%  { opacity: 0.2; }
       80%  { opacity: 0.8; }
-      100% { opacity: 1;   }
+      100% { opacity: 1; }
     }
 
-    /* Responsive tweaks */
+    /* --------------------
+       Responsive tweaks
+    -------------------- */
     @media (max-width: 768px) {
       h1 { font-size: 1.8em; }
       p  { font-size: 1em;   }
