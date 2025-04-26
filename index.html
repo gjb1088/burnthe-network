@@ -11,35 +11,29 @@
   />
 
   <style>
-    /* ----------------------------------------
-       Base page styles
-    ---------------------------------------- */
+    /* Base page styles */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
     }
-
     body {
       background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #330033, #001f33);
       background-size: 400% 400%;
       animation: gradientBG 20s ease infinite;
       color: #f0f0f0;
       font-family: 'Share Tech Mono', monospace;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
     }
-
     @keyframes gradientBG {
       0%   { background-position: 0%   50%; }
       50%  { background-position: 100% 50%; }
       100% { background-position: 0%   50%; }
     }
-
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2.2em;
@@ -51,12 +45,10 @@
       animation: flicker 2.5s infinite;
       margin: 30px 20px 10px;
     }
-
     @keyframes flicker {
       0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
       20%, 24%, 55%                        { opacity: 0.6; }
     }
-
     p {
       font-size: 1.1em;
       color: #cccccc;
@@ -65,29 +57,25 @@
       margin: 10px 20px;
     }
 
-    /* ----------------------------------------
-       Image + overlays
-    ---------------------------------------- */
+    /* Image + overlays */
     .image-wrapper {
       position: relative;
       width: 80%;
       max-width: 600px;
       margin: 20px 0;
     }
-
     .coming-soon-img {
       display: block;
       width: 100%;
-      height: auto;
       border-radius: 8px;
       box-shadow:
         0   0  25px #00ffff80,
         0   0  50px #ff00ff40;
       opacity: 0;
       animation: flickerInImage 7s ease forwards;
+      /* STARTS after logo animation finishes (2s) */
       animation-delay: 2s;
     }
-
     @keyframes flickerInImage {
       0%   { opacity: 0;   }
       50%  { opacity: 0.2; }
@@ -105,9 +93,9 @@
       max-width: 38%;
       opacity: 0;
       animation: flickerInLogo 2s ease forwards;
-      animation-delay: 4s;
+      /* STARTS immediately */
+      animation-delay: 0s;
     }
-
     @keyframes flickerInLogo {
       0%   { opacity: 0;   }
       30%  { opacity: 0.6; }
@@ -133,15 +121,14 @@
       background-color: rgba(0, 0, 0, 0.4);
       opacity: 0;
       animation: flickerInButton 1.5s ease forwards;
+      /* STARTS after logo (2s) + image (7s) = 9s */
       animation-delay: 9s;
       transition: all 0.3s ease;
     }
-
     .contact-button:hover {
       background-color: rgba(0,255,255,0.1);
       box-shadow: 0 0 25px #00ffff;
     }
-
     @keyframes flickerInButton {
       0%   { opacity: 0;   }
       40%  { opacity: 0.5; }
@@ -150,9 +137,7 @@
       100% { opacity: 1;   }
     }
 
-    /* ----------------------------------------
-       Responsive adjustments
-    ---------------------------------------- */
+    /* Responsive tweaks */
     @media (max-width: 768px) {
       h1 { font-size: 1.8em; }
       p  { font-size: 1em;   }
@@ -165,7 +150,6 @@
         padding: 8px 16px;
       }
     }
-
     @media (max-width: 480px) {
       h1 { font-size: 1.6em; }
       p  { font-size: 0.9em; }
@@ -180,7 +164,6 @@
     }
   </style>
 </head>
-
 <body>
   <h1>"If you want to take the island, burn the boats."</h1>
   <p>When retreat is no longer an option, success becomes the only path forward.</p>
