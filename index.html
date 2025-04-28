@@ -59,6 +59,9 @@
       100% { background-position: 0%   50%; }
     }
 
+    /* ----------------------------------------
+       Text animations
+    ---------------------------------------- */
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2.2em;
@@ -66,10 +69,28 @@
       text-shadow: 0 0 5px #ff00cc, 0 0 15px #ff00cc, 0 0 30px #ff00cc;
       animation: flicker 2.5s infinite;
       margin: 30px 20px 10px;
+      opacity: 1; /* always visible */
     }
     @keyframes flicker {
       0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1; }
       20%,24%,55%                      { opacity: 0.6; }
+    }
+
+    .intro-text,
+    .bottom-text {
+      opacity: 0;
+    }
+    .intro-text {
+      animation: fadeInText 1s ease forwards;
+      animation-delay: 3s;
+    }
+    .bottom-text {
+      animation: fadeInText 2s ease forwards;
+      animation-delay: 6s;
+    }
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
     p {
@@ -103,8 +124,8 @@
       width: 100%;
       border-radius: 8px;
       opacity: 0;
-      animation: flickerInImage 7s ease forwards;
-      animation-delay: 4s;
+      animation: flickerInImage 8s ease forwards;
+      animation-delay: 10.5s; /* was 4s → +3s for text */
     }
     @keyframes flickerInImage {
       0%   { opacity: 0;   }
@@ -121,8 +142,8 @@
       transform: translateX(-50%);
       max-width: 50%;
       opacity: 0;
-      animation: flickerInLogo 2s ease forwards;
-      animation-delay: 2s;
+      animation: flickerInLogo 3s ease forwards;
+      animation-delay: 9s; /* was 2s → +3s for text */
     }
     @keyframes flickerInLogo {
       0%   { opacity: 0;   }
@@ -151,7 +172,7 @@
       opacity: 0;
       transition: all 0.3s ease;
       animation: flickerInButton 1.5s ease forwards;
-      animation-delay: 11s; /* 2s logo + 7s image */
+      animation-delay: 17s; /* was 11s → +2s so it follows image */
     }
     .contact-button.desktop:hover {
       background-color: rgba(0,255,255,0.1);
@@ -183,7 +204,7 @@
       /* fade out everything in content-wrapper */
       .content-wrapper {
         animation: fadeOut 2s ease forwards;
-        animation-delay: 10s;
+        animation-delay: 16s;
         animation-fill-mode: forwards;
       }
       @keyframes fadeOut {
@@ -207,7 +228,7 @@
         background-color: rgba(0,0,0,0.4);
         opacity: 0;
         animation: flickerInButton 1.5s ease forwards;
-        animation-delay: 13s; /* after fade-out */
+        animation-delay: 18s; /* unchanged */
       }
       .contact-button.mobile:hover {
         background-color: rgba(0,255,255,0.1);
@@ -224,7 +245,10 @@
 <body>
   <div class="content-wrapper">
     <h1>"If you want to take the island, burn the boats."</h1>
-    <p>When retreat is no longer an option, success becomes the only path forward.</p>
+
+    <p class="intro-text">
+      When retreat is no longer an option, success becomes the only path forward.
+    </p>
 
     <div class="image-wrapper">
       <img
@@ -247,7 +271,7 @@
       </a>
     </div>
 
-    <p><strong>No way back. Only forward. Burn.IT.</strong></p>
+    <p class="bottom-text"><strong>No way back. Only forward. Burn.IT.</strong></p>
   </div>
 
   <!-- mobile-only button -->
